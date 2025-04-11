@@ -1,0 +1,13 @@
+/* src/styles/LocationMap.css */
+.location-map-container { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
+.location-map-container h3 { text-align: left; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 600; }
+.map { height: 350px; width: 100%; border-radius: var(--border-radius-medium); z-index: 0; border: 1px solid var(--border-color); margin-bottom: 1rem; }
+.map-address { margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); text-align: left; line-height: 1.5; }
+.map-error { color: var(--non-veg-color); font-style: italic; text-align: center; padding: 1rem; }
+
+.leaflet-popup-content-wrapper { border-radius: var(--border-radius-small) !important; }
+.leaflet-popup-content { font-family: var(--font-primary); font-size: 0.9rem; line-height: 1.4; }
+.leaflet-popup-content strong { font-weight: 600; color: var(--text-primary); }
+
+@media (max-width: 768px) { .map { height: 300px; } .location-map-container h3 { font-size: 1.3rem; } }
+@media (max-width: 576px) { .map { height: 250px; } .location-map-container h3 { font-size: 1.2rem; } .map-address { font-size: 0.9rem; } }

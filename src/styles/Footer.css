@@ -1,0 +1,83 @@
+/* src/styles/Footer.css */
+.app-footer.modern {
+    background-color: var(--brand-secondary); /* Dark footer */
+    color: #a9abb2; /* Lighter grey text */
+    padding: 3rem var(--padding-base) 1rem;
+    margin-top: 3rem;
+  }
+  
+  .footer-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .footer-section h4 {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .footer-logo {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.8rem !important;
+    text-transform: none !important; /* Keep logo case */
+    letter-spacing: 0 !important;
+    color: var(--text-light) !important; /* Ensure logo text is light */
+  }
+  
+  
+  .footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+    color: #a9abb2;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 0.7rem;
+  }
+  
+  .footer-section a {
+    color: #a9abb2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition);
+  }
+  
+  .footer-section a:hover {
+    color: var(--text-light);
+  }
+  
+  .footer-bottom {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #4d5162; /* Darker separator */
+    font-size: 0.85rem;
+    color: #8a8c94;
+  }
+  
+  @media (max-width: 768px) {
+      .footer-content { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+      .footer-section p, .footer-section a { font-size: 0.85rem; }
+  }
+   @media (max-width: 576px) {
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+       .footer-section ul { padding: 0; display: inline-block; text-align: center; }
+       .footer-section.about p,
+       .footer-section.contact p { text-align: center;}
+   }

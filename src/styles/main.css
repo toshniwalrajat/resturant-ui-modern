@@ -1,0 +1,163 @@
+/* src/styles/main.css */
+:root {
+    --brand-primary: #FC8019; /* Zomato/Swiggy Orange */
+    --brand-secondary: #282c3f; /* Dark background elements */
+    --text-primary: #1e2335;
+    --text-secondary: #535665;
+    --text-light: #ffffff;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5; /* Light gray background */
+    --border-color: #e9e9eb;
+    --star-color: #FFAD1D; /* Gold/Yellow for stars */
+    --veg-color: #008000;  /* Standard Green */
+    --non-veg-color: #E43746; /* Standard Red */
+    --tag-bg: #f0f0f0; /* Background for simple tags */
+  
+    --font-primary: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Example modern font */
+    --base-font-size: 16px;
+  
+    --border-radius-small: 4px;
+    --border-radius-medium: 8px;
+    --border-radius-large: 16px;
+  
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+    --container-width: 1140px;
+    --padding-base: 1rem;
+    --padding-large: 1.5rem;
+    --transition: 0.2s ease-in-out;
+  }
+  
+  /* Load Poppins font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+  
+  /* Basic Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth; /* Smooth scrolling for hash links */
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary); /* Use white as primary background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  a {
+    color: var(--brand-primary);
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin-bottom: 0.75em;
+    color: var(--text-primary);
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; margin-top: 2.5rem; margin-bottom: 1.5rem; text-align: center; color: #333; }
+  h3 { font-size: 1.2rem; }
+  p { margin-bottom: 1em; color: var(--text-secondary); }
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  ul {
+      list-style: none; /* Remove default list styles */
+  }
+  
+  /* Layout */
+  .app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 1rem auto 0; /* Add top margin below header */
+    padding: 0 var(--padding-base);
+  }
+  
+  .page-container {
+    padding: var(--padding-base) 0; /* Vertical padding for page content */
+  }
+  
+  /* Section Anchors (for smooth scroll) */
+  .menu-anchor-section,
+  .info-anchor-section,
+  #location { /* Added id for map */
+    padding-top: 80px; /* Approx header height + buffer */
+    margin-top: -70px; /* Adjust scroll position */
+  }
+  
+  
+  /* Basic button style */
+  .button-primary {
+    display: inline-block; /* Allow setting padding/width */
+    background-color: var(--brand-primary);
+    color: var(--text-light) !important; /* Ensure text is light */
+    padding: 10px 20px;
+    border-radius: var(--border-radius-medium);
+    font-weight: 500;
+    text-align: center;
+    transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    box-shadow: var(--shadow-light);
+    border: none; /* Ensure no default border */
+    cursor: pointer;
+  }
+  .button-primary:hover {
+    background-color: #e06f15; /* Darker orange */
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    text-decoration: none; /* Remove underline on hover */
+    color: var(--text-light) !important;
+  }
+  
+  /* Visually Hidden class for accessibility labels */
+  .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; /* Prevent wrapping */
+  }
+  
+  
+  /* Responsive utilities */
+  @media (max-width: 768px) {
+    :root { --base-font-size: 15px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    .main-content { padding: 0 1rem; margin-top: 0.5rem; }
+    .page-container { padding: 0.5rem 0; }
+  }
+  
+  @media (max-width: 576px) {
+      :root { --base-font-size: 14px; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+  }

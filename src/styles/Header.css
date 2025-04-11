@@ -1,0 +1,161 @@
+/* src/styles/Header.css */
+.app-header {
+    background-color: var(--bg-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    transition: box-shadow var(--transition), border-color var(--transition);
+  }
+  
+  .app-header.scrolled {
+    box-shadow: var(--shadow-light);
+    border-bottom-color: var(--border-color);
+  }
+  
+  .header-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0.8rem var(--padding-base);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* For mobile menu positioning */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .logo:hover { text-decoration: none; }
+  
+  /* Desktop Nav */
+  .main-nav.desktop-nav {
+    display: flex;
+    gap: 1.8rem; /* Space between nav items */
+  }
+  
+  .main-nav a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .main-nav a::after { /* Underline effect on hover/active */
+      content: '';
+      position: absolute;
+      bottom: -2px; /* Position underline slightly below text */
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--brand-primary);
+      transition: width var(--transition);
+  }
+  
+  .main-nav a:hover,
+  .main-nav a.active { /* Use .active with NavLink */
+      color: var(--text-primary);
+  }
+  .main-nav a:hover::after,
+  .main-nav a.active::after {
+      width: 100%;
+  }
+  
+  /* Mobile Nav & Hamburger */
+  .hamburger-react {
+      display: none; /* Hidden by default */
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-primary);
+      z-index: 1100; /* Above mobile nav */
+      padding: 5px;
+  }
+  
+  .main-nav.mobile-nav {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      position: absolute;
+      top: 100%; /* Position below header */
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-primary);
+      box-shadow: var(--shadow-medium);
+      padding: 0.5rem 0;
+      z-index: 1050; /* Below hamburger */
+      border-top: 1px solid var(--border-color);
+  }
+  
+  .main-nav.mobile-nav.open {
+      display: flex; /* Show when open */
+  }
+  
+  .mobile-nav a {
+      padding: 0.8rem var(--padding-large);
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 1rem;
+      color: var(--text-primary); /* Ensure mobile links are dark */
+  }
+  .mobile-nav a:last-child {
+      border-bottom: none;
+  }
+  .mobile-nav a:hover {
+      background-color: var(--bg-secondary);
+      color: var(--brand-primary);
+  }
+  .mobile-nav a.active {
+      color: var(--brand-primary);
+      font-weight: 600;
+  }
+  
+  
+  /* Header Actions (Cart, Profile etc.) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .header-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--text-secondary);
+  }
+  
+  .cart-link { position: relative; display: flex;}
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    border-radius: 50%;
+    padding: 1px 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    box-shadow: 0 0 0 2px var(--bg-primary);
+  }
+  
+  /* Responsive Header */
+  @media (max-width: 768px) {
+      .main-nav.desktop-nav { display: none; } /* Hide desktop nav */
+      .hamburger-react { display: block; } /* Show hamburger */
+      .logo { font-size: 1.3rem; }
+      .header-content { padding: 0.6rem 1rem; }
+      .header-actions { gap: 0.8rem; }
+  }

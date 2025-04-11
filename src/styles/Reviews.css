@@ -1,0 +1,13 @@
+/* src/styles/Reviews.css */
+.reviews-section { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
+.reviews-section h3 { text-align: left; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 600; }
+.review-card { background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-medium); padding: var(--padding-base); margin-bottom: 1.2rem; box-shadow: var(--shadow-light); }
+.review-card:last-child { margin-bottom: 0; }
+.review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.review-user { font-weight: 600; color: var(--text-primary); font-size: 1rem; }
+.review-rating { font-size: 0.9rem; font-weight: 600; color: var(--text-light); background-color: var(--veg-color); padding: 2px 8px; border-radius: var(--border-radius-small); display: inline-flex; align-items: center; gap: 3px; }
+.review-rating .star { color: var(--text-light); font-size: 0.85em; }
+.review-comment { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0; }
+
+@media (max-width: 768px) { .reviews-section h3 { font-size: 1.3rem; } .review-card { padding: 1rem; } .review-user { font-size: 0.95rem; } .review-comment { font-size: 0.9rem; } }
+@media (max-width: 576px) { .reviews-section h3 { font-size: 1.2rem; } .review-comment { font-size: 0.85rem; } }

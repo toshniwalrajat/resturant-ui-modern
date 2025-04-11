@@ -1,0 +1,57 @@
+/* src/styles/Checkout.css */
+.checkout-page { max-width: 700px; margin: 1rem auto 3rem; padding: 0 var(--padding-base); }
+.checkout-page h2 { text-align: center; margin-bottom: 2.5rem; font-size: 1.8rem; font-weight: 600; }
+.checkout-page form { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.checkout-section { background-color: var(--bg-primary); padding: var(--padding-large); border-radius: var(--border-radius-medium); box-shadow: var(--shadow-light); border: 1px solid var(--border-color); }
+.checkout-section h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); }
+.payment-method-section { border-top: 8px solid var(--bg-secondary); margin-top: 1rem; padding-top: 1.5rem; }
+
+.checkout-page label { display: block; margin-bottom: 0.3rem; font-weight: 500; font-size: 0.9rem; }
+.checkout-page input[type="text"],
+.checkout-page input[type="tel"],
+.checkout-page input[type="email"],
+.checkout-page textarea { width: 100%; padding: 12px 14px; margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-small); font-size: 0.95rem; font-family: inherit; transition: border-color var(--transition), box-shadow var(--transition); }
+.checkout-page input:focus,
+.checkout-page textarea:focus { outline: none; border-color: var(--brand-primary); box-shadow: 0 0 0 3px rgba(252, 128, 25, 0.15); }
+.checkout-page textarea { resize: vertical; min-height: 80px; }
+
+.order-summary-checkout h3 { display: none; }
+.order-summary-checkout .summary-item { display: flex; justify-content: space-between; margin-bottom: 0.6rem; font-size: 0.9rem; color: var(--text-secondary); }
+.order-summary-checkout .summary-item span:last-child { color: var(--text-primary); font-weight: 500; }
+.order-summary-checkout hr { border: none; border-top: 1px dashed var(--border-color); margin: 1rem 0; }
+.order-summary-checkout .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+.order-summary-checkout .summary-row span:last-child { color: var(--text-primary); font-weight: 500; }
+.order-summary-checkout .summary-total { display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+
+.payment-options .payment-method { margin-bottom: 0.5rem; padding: 12px 0; border-bottom: 1px solid var(--bg-secondary); }
+.payment-options .payment-method:last-child { border-bottom: none; }
+.payment-options label { margin-left: 0.75rem; cursor: pointer; font-weight: 500; font-size: 0.95rem; color: var(--text-primary); }
+.payment-options input[type="radio"] { accent-color: var(--brand-primary); transform: scale(1.1); margin-right: 5px; vertical-align: middle; }
+
+.card-details-form, .upi-details-form { margin-top: 0.8rem; padding: 1rem; background-color: var(--bg-secondary); border-radius: var(--border-radius-small); display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.card-details-form input, .upi-details-form input { margin-bottom: 0;}
+.card-details-form input:first-child { flex-basis: 100%;}
+.card-details-form input:nth-child(2),
+.card-details-form input:nth-child(3) { flex-basis: calc(50% - 0.4rem); }
+.upi-details-form { align-items: center; }
+.upi-details-form input { flex-grow: 1; }
+.verify-upi-btn { padding: 8px 14px; background-color: var(--text-secondary); color: var(--text-light); border: none; border-radius: var(--border-radius-small); cursor: pointer; font-size: 0.85rem; transition: background-color var(--transition); }
+.verify-upi-btn:hover { background-color: var(--text-primary); }
+.cod-note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; padding-left: 1.8rem; }
+
+.place-order-btn { width: 100%; padding: 14px; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; margin-top: 1.5rem; }
+
+@media (max-width: 768px) {
+    .checkout-section { padding: var(--padding-base); }
+    .checkout-section h3 { font-size: 1.05rem; }
+    .checkout-page input[type="text"], .checkout-page input[type="tel"], .checkout-page input[type="email"], .checkout-page textarea { padding: 10px 12px; font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+    .checkout-page h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .checkout-section { padding: 0.8rem; }
+    .card-details-form input:nth-child(2), .card-details-form input:nth-child(3) { flex-basis: 100%; }
+    .upi-details-form { flex-wrap: wrap; }
+    .verify-upi-btn { width: 100%; margin-top: 0.5rem; }
+    .place-order-btn { font-size: 1rem; padding: 12px; }
+}
